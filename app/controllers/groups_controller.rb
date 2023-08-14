@@ -15,8 +15,7 @@ class GroupsController < ApplicationController
       # render json: @group, status: :created, location: @group
       redirect_to groups_path, notice: 'Category added successfully'
     else
-      # render json: @group.errors, status: :unprocessable_entity
-      render :new, status: :unprocessable_entity, alert: 'Failed to add category'
+      render :new, status: :unprocessable_payment, alert: 'Failed to add category'
     end
   end
 

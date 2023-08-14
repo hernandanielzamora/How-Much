@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'     
   end
 
-  root to: "groups#index"
+  root to: "users#index"
   resources :users, only: %i[index]
 
   resources :groups, only: %i[index new create show destroy update] do
-    resources :entities, only: %i[index new create destroy update]
+    resources :payments, only: %i[index new create destroy update]
   end
 end

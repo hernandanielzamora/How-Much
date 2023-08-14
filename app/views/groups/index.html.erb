@@ -1,1 +1,30 @@
+<%= render 'common/header' %>
 <h1>Categories</h1>
+
+        <div class="card-list">
+          <% @groups.each do |category| %>
+            <div class="card hover">
+              <div class="flex-row">
+                <div class="cat-image">
+                  <%= image_tag category.icon rescue image_tag('https://img.icons8.com/?size=512&id=kLORTzuNOM2d&format=png', alt: "Category Icon") %>
+                </div>
+                <div>
+                  <h2><%= link_to category.name, group_payments_path(group_id: category.id, class: 'text') %></h2>
+                  <br/>
+                  <hr />
+                  <br/>
+                  <p><%= l category.created_at.to_date, format: :long %></p>
+                </div>
+              </div>
+              <div class="cat-total">
+                <p>$<%= Payment.where(group_id: category.id).sum(:amount) %></p>
+                <br/>
+                <%= button_to 'Delete', group_path(id: category.id), method: :delete, class: 'del-btn' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+
+
+<%= link_to "Add a Category", new_group_path %>

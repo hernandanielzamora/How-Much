@@ -1,4 +1,4 @@
-class EntitiesController < ApplicationController
+class PaymentsController < ApplicationController
   before_action :set_payment, only: %i[show update destroy]
 
   # GET /items
