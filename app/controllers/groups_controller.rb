@@ -9,13 +9,11 @@ class GroupsController < ApplicationController
 
   def create
     add_group = current_user.groups.new(group_params)
-    # @group = Group.new(group_params)
 
     if add_group.save
-      # render json: @group, status: :created, location: @group
       redirect_to groups_path, notice: 'Category added successfully'
     else
-      render :new, status: :unprocessable_payment, alert: 'Failed to add category'
+      render :new, alert: 'Failed to add category'
     end
   end
 
