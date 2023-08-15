@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
   # POST /items
   def create
     @group = Group.find(params[:group_id])
-    @payment = @group.payments.build(payment_params) # Build a new entity associated with the group
+    @payment = @group.payment.build(payment_params) # Build a new entity associated with the group
 
     @payment.user_id = current_user.id # Set the user association
     @payment.author_id = current_user.id # Set the author association (if applicable)
