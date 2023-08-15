@@ -11,32 +11,32 @@ RSpec.describe Payment, type: :model do
 
   end
 
-  describe "validations" do
-    it "is valid with valid attributes" do
+  describe "Validations" do
+    it "Payment is valid with valid attributes" do
       expect(@payment).to be_valid
     end
 
-    it "is not valid without a name" do
+    it "Payment not valid without a name" do
       @payment.name = nil
       expect(@payment).not_to be_valid
     end
 
-    it "is not valid without an amount" do
+    it "Payment not valid without an amount" do
       @payment.amount = nil
       expect(@payment).not_to be_valid
     end
 
-    it "is not valid without a user" do
+    it "Payment not valid without a user" do
       @payment.user_id = nil
       expect(@payment).not_to be_valid
     end
 
-    it "is not valid if amount is zero" do
+    it "Payment not valid if amount is zero" do
       @payment.amount = 0
       expect(@payment).not_to be_valid
     end
 
-    it "is not valid if author does not belong to the same user" do
+    it "Payment not valid if author does not belong to the same user" do
       @payment.author_id = 2
       expect(@payment).not_to be_valid
     end
