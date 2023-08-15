@@ -1,0 +1,13 @@
+<h1>Add a transaction</h1>
+<%= form_with model: @payment, url: group_payments_path(@group), data: { turbo: false } do |form| %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: 'Enter the name transaction' %>
+
+  <%= form.label :amount %>
+  <%= form.number_field :amount, placeholder: 'Enter the amount' %>
+
+  <%= form.submit 'Save' %>
+<% end %>
+
+<%= link_to "Go Back", :back %>

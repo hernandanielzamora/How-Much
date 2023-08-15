@@ -1,0 +1,14 @@
+<h1>Payments</h1>
+
+<div>
+  <% @payments.each do |payment| %>
+    <p>Name: <%= payment.name %> </p>
+    <p>Amount: <%= payment.amount %> </p>
+    <p>Date: <%= payment.created_at.to_date %> </p>
+  <% end %>
+</div>
+
+<%= @total_amount %>
+
+<%= link_to "ADD A NEW TRANSACTION", new_group_payment_path %>
+<%= link_to "Go Back", groups_path %>

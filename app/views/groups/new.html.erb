@@ -1,0 +1,12 @@
+<h1> Create new category </h1>
+
+<%= form_with model: @group, url: groups_path do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: 'Enter the name for the category' %>
+  <%= form.label :icon %>
+  <%= form.text_field :icon, placeholder: 'Enter the url for the image' %>
+  <%= form.submit 'Save' %>
+<% end %>
+
+<%= link_to "Go Back", :back %>
+
