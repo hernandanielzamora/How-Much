@@ -23,7 +23,7 @@
         <div class="card flex">
           <div class="card-header flex">
             <div class="card-icon">
-              <%= image_tag @group.icon%>
+              <%= image_tag @group.icon rescue image_tag 'https://static.vecteezy.com/system/resources/previews/000/583/708/original/online-shop-icon-vector.jpg'%>
             </div>
             <div class="payment-info">
               <p>Name: <%= payment.name %> </p>

@@ -1,34 +1,39 @@
 require 'rails_helper'
 
-RSpec.describe 'entities#index', type: :feature do
+RSpec.describe 'payments#new', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Salman', email: 'fpsapc@gmail.com', password: '123456')
-    @group = Group.create(icon: 'icon.png', name: 'Group', user_id: @user.id)
-    @payment = Payment.create(name: 'Transaction', amount: '100', group_id: @group.id, user_id: @user.id,
+    @user = User.create(name: 'Hernán Zamora', email: 'hernanzamora1999@gmai.com', password: '123456')
+    @group = Group.create(icon: 'icon.png', name: 'Wifi', user_id: @user.id)
+    @payment = Payment.create(name: 'July', amount: 100, group_id: @group.id, user_id: @user.id,
                             author_id: @user.id)
 
     visit new_user_session_path
-    fill_in 'Email', with: 'fpsapc@gmail.com'
+    fill_in 'Email', with: 'hernanzamora1999@gmai.com'
     fill_in 'Password', with: '123456'
     click_button 'Log in'
 
     visit(new_group_payment_path(@group))
   end
 
-  it "displays a list of payments" do
-    expect(page).to have_selector("h1", text: "Payments")
-
-    @payments.each do |payment|
-      expect(page).to have_selector("div p", text: "Name: #{payment.name}")
-      expect(page).to have_selector("div p", text: "Amount: #{payment.amount}")
-      expect(page).to have_selector("div p", text: "Date: #{payment.created_at.to_date}")
+  context 'Testing payments/new page: ' do
+    it 'The logged user can enter the page' do
+      expect(page).to have_content 'All fields are mandatory'
     end
 
-    expect(page).to have_selector("p#total_amount", text: "Total Amount: #{@total_amount}")
-  end
+    it 'The add a new payment has a form' do
+      expect(page).to have_css('form')
+    end
 
-  it "displays links" do
-    expect(page).to have_link("ADD A NEW TRANSACTION", href: new_group_payment_path(@group))
-    expect(page).to have_link("Go Back", href: groups_path)
+    it 'The add a new payment form has a name field' do
+      expect(page).to have_css('input#payment_name')
+    end
+
+    it 'The add a new payment has an amount field' do
+      expect(page).to have_css('input#payment_amount')
+    end
+
+    it 'The add a new payment has a submit button' do
+      expect(page).to have_css('input[type=submit]')
+    end
   end
 end
