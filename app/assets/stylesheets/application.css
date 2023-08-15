@@ -235,3 +235,11 @@ a {
   border-radius: 4px;
   text-align: center;
 }
+
+/* Payments */
+
+.payment-info p {
+  font-size: 1rem;
+  color: #434b54;
+  margin-top: 5%;
+}
