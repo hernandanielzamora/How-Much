@@ -1,12 +1,26 @@
-<h1> Create new category </h1>
+<nav class="navbar-cont flex">
+  <% if user_signed_in? %>
+    <%= link_to image_tag("https://i.postimg.cc/28jqpTJJ/pngaaa-com-4731717.png' border='0' alt='pngaaa-com-4731717"), groups_path, class: 'back-arrow' %>
+  <% else %>
+    <%= button_to "Log in", new_user_session_path, class:"btn navbar-btn" %>
+    <%= button_to 'Sign up', new_user_registration_path, method: :get,class:"btn navbar-btn" %>
+  <% end %>
+  <h1>Add a new Category</h1>
+  <img src="https://i.postimg.cc/R0xX4NtN/pngfind-com-lupa-png-sin-fondo-4235556.png' border='0' alt='pngfind-com-lupa-png-sin-fondo-4235556'" class="nav-img" />
+</nav>
 
-<%= form_with model: @group, url: groups_path do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name, placeholder: 'Enter the name for the category' %>
-  <%= form.label :icon %>
-  <%= form.text_field :icon, placeholder: 'Enter the url for the image' %>
-  <%= form.submit 'Save' %>
+<%= form_with model: @group, url: groups_path, class:'add-form flex' do |form| %>
+  <div class="field">
+    <%= form.text_field :name, placeholder: 'Enter the name for the category' %>
+  </div>
+  
+  <div class="field">
+    <%= form.text_field :icon, placeholder: 'Enter the url for the image' %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit 'Save' %>
+  </div>
 <% end %>
 
-<%= link_to "Go Back", :back %>
 
