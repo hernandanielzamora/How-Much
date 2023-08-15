@@ -1,19 +1,29 @@
-<%= render 'common/header' %>
-<h1>Categories</h1>
+<nav class="navbar-cont flex">
+  <% if user_signed_in? %>
+    <%= link_to image_tag("https://i.postimg.cc/R0nhQZpQ/transparent-disconnect-icon-logout-sign-icon-interface-icon-5fcbe43d729733-9456472816071977574694.png' border='0' alt='transparent-disconnect-icon-logout-sign-icon-interface-icon-5fcbe43d729733-9456472816071977574694"), destroy_user_session_path, method: :delete, class:'back-arrow' %>
+  <% else %>
+    <%= button_to "Log in", new_user_session_path, class:"btn navbar-btn" %>
+    <%= button_to 'Sign up', new_user_registration_path, method: :get,class:"btn navbar-btn" %>
+  <% end %>
+  <h1>Categories</h1>
+  <img src="https://i.postimg.cc/R0xX4NtN/pngfind-com-lupa-png-sin-fondo-4235556.png' border='0' alt='pngfind-com-lupa-png-sin-fondo-4235556'" class="nav-img" />
+</nav>
 
-<div>
+
+<h2 class="categories-title">Total payments: $<%= total_sum = Payment.sum(:amount) %></h2>
+<div class="cards-container flex">
   <% @groups.each do |category| %>
-    <div>
-      <div>
-        <div>
+    <div class="card flex">
+      <div class="card-header flex">
+        <div class="card-icon">
           <%= image_tag category.icon rescue image_tag('https://img.icons8.com/?size=512&id=kLORTzuNOM2d&format=png', alt: "Category Icon") %>
         </div>
-        <div>
+        <div class="card-info">
           <h2><%= link_to category.name, group_payments_path(group_id: category.id) %></h2>
           <p><%= l category.created_at.to_date, format: :long %></p>
         </div>
       </div>
-      <div>
+      <div class="card-footer flex">
         <p>$<%= Payment.where(group_id: category.id).sum(:amount) %></p>
         <%= button_to 'Delete', group_path(id: category.id), method: :delete%>
       </div>
@@ -21,4 +31,4 @@
   <% end %>
 </div>
 
-<%= link_to "Add a Category", new_group_path %>
+<%= link_to "Add a Category", new_group_path, class:'link-to flex' %>
