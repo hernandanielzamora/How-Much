@@ -5,7 +5,7 @@ RSpec.describe 'payments#new', type: :feature do
     @user = User.create(name: 'Hernán Zamora', email: 'hernanzamora1999@gmai.com', password: '123456')
     @group = Group.create(icon: 'icon.png', name: 'Wifi', user_id: @user.id)
     @payment = Payment.create(name: 'July', amount: 100, group_id: @group.id, user_id: @user.id,
-                            author_id: @user.id)
+                              author_id: @user.id)
 
     visit new_user_session_path
     fill_in 'Email', with: 'hernanzamora1999@gmai.com'

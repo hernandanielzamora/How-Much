@@ -5,7 +5,7 @@ RSpec.describe 'group/index', type: :feature do
     @user = User.create(name: 'Hernán Zamora', email: 'hernanzamora1999@gmail.com', password: '123456')
     @group = Group.create(icon: 'icon.png', name: 'Group', user_id: @user.id)
     @payment = Payment.create(name: 'Wifi', amount: '100', group_id: @group.id, user_id: @user.id,
-                            author_id: @user.id)
+                              author_id: @user.id)
 
     visit new_user_session_path
     fill_in 'Email', with: 'hernanzamora1999@gmail.com'

@@ -5,7 +5,7 @@ RSpec.describe 'Payment', type: :request do
     @user = User.create(name: 'Salman', email: 'fpsapc@gmail.com', password: '123456')
     @group = Group.create(icon: 'icon.png', name: 'Group', user_id: @user.id)
     @payment = Payment.create(name: 'Transaction', amount: '100', group_id: @group.id, user_id: @user.id,
-                            author_id: @user.id)
+                              author_id: @user.id)
   end
 
   describe 'GET /payments' do
