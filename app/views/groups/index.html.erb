@@ -11,24 +11,30 @@
 
 
 <h2 class="categories-title">Total payments: $<%= total_sum = Payment.sum(:amount) %></h2>
-<div class="cards-container flex">
-  <% @groups.each do |category| %>
-    <div class="card flex">
-      <div class="card-header flex">
-        <div class="card-icon">
-          <%= image_tag category.icon rescue image_tag('https://img.icons8.com/?size=512&id=kLORTzuNOM2d&format=png', alt: "Category Icon") %>
+
+<% if @groups.blank? %>
+  <h2 class="no-title"> No categories yet </h2>
+  <h4 class="no-title"> Your new categories will be placed here </h4>
+<% else %>
+  <div class="cards-container flex">
+    <% @groups.each do |category| %>
+      <div class="card flex">
+        <div class="card-header flex">
+          <div class="card-icon">
+            <%= image_tag category.icon rescue image_tag('https://img.icons8.com/?size=512&id=kLORTzuNOM2d&format=png', alt: "Category Icon") %>
+          </div>
+          <div class="card-info">
+            <h2><%= link_to category.name, group_payments_path(group_id: category.id) %></h2>
+            <p><%= l category.created_at.to_date, format: :long %></p>
+          </div>
         </div>
-        <div class="card-info">
-          <h2><%= link_to category.name, group_payments_path(group_id: category.id) %></h2>
-          <p><%= l category.created_at.to_date, format: :long %></p>
+        <div class="card-footer flex">
+          <p>$<%= Payment.where(group_id: category.id).sum(:amount) %></p>
+          <%= button_to 'Delete', group_path(id: category.id), method: :delete%>
         </div>
       </div>
-      <div class="card-footer flex">
-        <p>$<%= Payment.where(group_id: category.id).sum(:amount) %></p>
-        <%= button_to 'Delete', group_path(id: category.id), method: :delete%>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
 
 <%= link_to "Add a Category", new_group_path, class:'link-to flex' %>

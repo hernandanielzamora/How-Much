@@ -12,26 +12,31 @@
 <h2 class="categories-title">Payments for: <%= @group.name %></h2>
 <h2 class="categories-title">Total amount: $<%= @total_amount %></h2>
 
-<div>
-  <% @payments.each do |payment| %>
-    <div class="cards-container flex">
-      <div class="card flex">
-        <div class="card-header flex">
-          <div class="card-icon">
-            <%= image_tag @group.icon%>
+
+<% if @payments.blank? %>
+  <h2 class="no-title"> No registered payments </h2>
+  <h4 class="no-title"> Your new payments will be placed here </h4>
+<% else %>
+  <div>
+    <% @payments.each do |payment| %>
+      <div class="cards-container flex">
+        <div class="card flex">
+          <div class="card-header flex">
+            <div class="card-icon">
+              <%= image_tag @group.icon%>
+            </div>
+            <div class="payment-info">
+              <p>Name: <%= payment.name %> </p>
+              <p>Date: <%= payment.created_at.to_date %> </p>
+            </div>
           </div>
-          <div class="payment-info">
-            <p>Name: <%= payment.name %> </p>
-            <p>Date: <%= payment.created_at.to_date %> </p>
+          <div class="card-footer flex">
+            <p>Amount: $<%= payment.amount %> </p>
+            <%= button_to "Delete", group_payment_path(user_id: payment.user.id, group_id: payment.group.id, id: payment.id), method: :delete, class: "del-btn"  %>
           </div>
-        </div>
-        <div class="card-footer flex">
-          <p>Amount: $<%= payment.amount %> </p>
-          <%= button_to "Delete", group_payment_path(user_id: payment.user.id, group_id: payment.group.id, id: payment.id), method: :delete, class: "del-btn"  %>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-
+    <% end %>
+  </div>
+<% end %>
 <%= link_to "Add a new payment", new_group_payment_path, class:'link-to flex' %>

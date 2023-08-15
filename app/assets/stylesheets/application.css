@@ -76,6 +76,11 @@ a {
   background-color: #45a049;
 }
 
+.no-title {
+  text-align: center;
+  margin-top: 5%;
+}
+
 /* Splash Screen */
 
 .btn-container {

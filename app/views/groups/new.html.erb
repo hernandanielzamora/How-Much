@@ -9,6 +9,7 @@
   <img src="https://i.postimg.cc/R0xX4NtN/pngfind-com-lupa-png-sin-fondo-4235556.png' border='0' alt='pngfind-com-lupa-png-sin-fondo-4235556'" class="nav-img" />
 </nav>
 
+<h4 class="no-title"> All fields are mandatory </h4>
 <%= form_with model: @group, url: groups_path, class:'add-form flex' do |form| %>
   <div class="field">
     <%= form.text_field :name, placeholder: 'Enter the name for the category' %>
@@ -22,5 +23,6 @@
     <%= form.submit 'Save' %>
   </div>
 <% end %>
+
 
 
