@@ -2,8 +2,9 @@
 
 Welcome to the README file for the MyBudget App. This document provides an overview of the app, its features, installation instructions, and usage guidelines.
 
-<img src='https://i.postimg.cc/ryfz65ZJ/how-much-onrender-com.png' border='0' alt='how-much-onrender-com'/>
-
+<p align="center">
+  <img src='https://i.postimg.cc/ryfz65ZJ/how-much-onrender-com.png' border='0' alt='how-much-onrender-com' />
+</p>
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
