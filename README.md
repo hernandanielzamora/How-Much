@@ -2,8 +2,9 @@
 
 Welcome to the README file for the MyBudget App. This document provides an overview of the app, its features, installation instructions, and usage guidelines.
 
-<img src='https://i.postimg.cc/ryfz65ZJ/how-much-onrender-com.png' border='0' alt='how-much-onrender-com'/>
-
+<p align="center">
+  <img src='https://i.postimg.cc/ryfz65ZJ/how-much-onrender-com.png' border='0' alt='how-much-onrender-com' />
+</p>
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -142,9 +143,10 @@ To deploy this project locally, you can run:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-You can check How Much? in action [here](https://how-much.onrender.com/)
+You can check How Much? in action [here](https://how-much.onrender.com/)<br>
+[Video Presentation](https://www.loom.com/share/930e60a53bb9417daf0b622c47d1d078?sid=4a91d503-5f1c-4751-adbe-92a2dd040542)
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 ## 👥 Author: <a name="authors">Hernán Zamora</a>
 
@@ -178,7 +180,8 @@ If you like this project please express your appreciation on LinkedIn.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for teaching me Ruby.
+I would like to give credit to [Gregoire Vella](https://www.behance.net/gregoirevella) <br>
+He created the [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) which I followed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
