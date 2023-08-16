@@ -145,7 +145,7 @@ To deploy this project locally, you can run:
 
 You can check How Much? in action [here](https://how-much.onrender.com/)
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 ## 👥 Author: <a name="authors">Hernán Zamora</a>
 
