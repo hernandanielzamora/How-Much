@@ -62,14 +62,15 @@ a {
   background-color: #4caf50;
   color: #fff;
   padding: 10px 20px;
-  width: 50vw;
-  justify-content: center;
+  width: 100vw;
   margin: auto;
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s ease;
   text-align: center;
   margin-top: 3%;
+  position: absolute;
+  bottom: 0%;
 }
 
 .link-to:hover {
