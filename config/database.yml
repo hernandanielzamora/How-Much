@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: BudgetApp_development
-  username: postgres
+  username: hernanzamora
   password: cyclops42
 
   # The specified database role being used to connect to postgres.
@@ -58,7 +58,7 @@ development:
 test:
   <<: *default
   database: BudgetApp_test
-  username: postgres
+  username: hernanzamora
   password: cyclops42
 
 # As with config/credentials.yml, you never want to store sensitive information,
