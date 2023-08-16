@@ -144,6 +144,7 @@ To deploy this project locally, you can run:
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 You can check How Much? in action [here](https://how-much.onrender.com/)
+[Video Presentation](https://www.loom.com/share/930e60a53bb9417daf0b622c47d1d078?sid=4a91d503-5f1c-4751-adbe-92a2dd040542)
 
 ## 👥 Author <a name="authors"></a>
 
