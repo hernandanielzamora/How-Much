@@ -180,7 +180,8 @@ If you like this project please express your appreciation on LinkedIn.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for teaching me Ruby.
+I would like to give credit to [Gregoire Vella](https://www.behance.net/gregoirevella) <br>
+He created the [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) which I followed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
