@@ -1,0 +1,42 @@
+<nav class="navbar-cont flex">
+  <% if user_signed_in? %>
+    <%= link_to image_tag("https://i.postimg.cc/28jqpTJJ/pngaaa-com-4731717.png' border='0' alt='pngaaa-com-4731717"), groups_path, class: 'back-arrow' %>
+  <% else %>
+    <%= button_to "Log in", new_user_session_path, class:"btn navbar-btn" %>
+    <%= button_to 'Sign up', new_user_registration_path, method: :get,class:"btn navbar-btn" %>
+  <% end %>
+  <h1>Payments</h1>
+  <img src="https://i.postimg.cc/R0xX4NtN/pngfind-com-lupa-png-sin-fondo-4235556.png' border='0' alt='pngfind-com-lupa-png-sin-fondo-4235556'" class="nav-img" />
+</nav>
+
+<h2 class="categories-title">Payments for: <%= @group.name %></h2>
+<h2 class="categories-title">Total amount: $<%= @total_amount %></h2>
+
+
+<% if @payments.blank? %>
+  <h2 class="no-title"> No registered payments </h2>
+  <h4 class="no-title"> Your new payments will be placed here </h4>
+<% else %>
+  <div>
+    <% @payments.each do |payment| %>
+      <div class="cards-container flex">
+        <div class="card flex">
+          <div class="card-header flex">
+            <div class="card-icon">
+              <%= image_tag @group.icon rescue image_tag 'https://static.vecteezy.com/system/resources/previews/000/583/708/original/online-shop-icon-vector.jpg'%>
+            </div>
+            <div class="payment-info">
+              <p>Name: <%= payment.name %> </p>
+              <p>Date: <%= payment.created_at.to_date %> </p>
+            </div>
+          </div>
+          <div class="card-footer flex">
+            <p>Amount: $<%= payment.amount %> </p>
+            <%= button_to "Delete", group_payment_path(user_id: payment.user.id, group_id: payment.group.id, id: payment.id), method: :delete, class: "del-btn"  %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<%= link_to "Add a new payment", new_group_payment_path, class:'link-to' %>

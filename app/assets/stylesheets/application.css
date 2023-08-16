@@ -1,15 +1,250 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("https://fonts.googleapis.com/css2?family=Proxima+Nova");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+/* Global variables */
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.notice {
+  color: #45a049;
+  text-align: center;
+  font-weight: 300;
+  margin: 2%;
+}
+
+.alert {
+  color: #ff0404;
+  text-align: center;
+  font-weight: 300;
+  margin: 2%;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn {
+  width: 90%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.1rem;
+  margin-bottom: 1%;
+}
+
+.login-link {
+  font-weight: 200;
+  color: #acabab;
+  display: flex;
+  margin: 1%;
+  justify-content: center;
+}
+
+.back-arrow img {
+  width: 2em;
+  height: 2em;
+}
+
+.nav-img {
+  width: 2em;
+  height: 2em;
+}
+
+.link-to {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  width: 100vw;
+  margin: auto;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-top: 3%;
+  position: absolute;
+  bottom: 0%;
+}
+
+.link-to:hover {
+  background-color: #45a049;
+}
+
+.no-title {
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* Splash Screen */
+
+.btn-container {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20vh;
+}
+
+.blue-btn {
+  background-color: #3778c2;
+}
+
+.blue-btn a {
+  color: #fff;
+}
+
+.log-title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+/* Log in Screen */
+
+.login-header {
+  background-color: #3778c2;
+  color: #fff;
+  padding: 2%;
+}
+
+.login-header h2 {
+  margin: auto 32%;
+  font-weight: 400;
+}
+
+.actions input {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #3778c2;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+#new_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.field input {
+  width: 100vw;
+  padding: 3%;
+  border: none;
+  background-color: #fffefe;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.field .email {
+  border-bottom: 1px solid #d4d4d4;
+  border-top: 1px solid #d4d4d4;
+}
+
+.rememberable {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/* Categories page */
+
+.navbar-cont {
+  justify-content: space-around;
+  background-color: #3778c2;
+  color: #fff;
+  padding: 2%;
+  align-items: center;
+}
+
+.cards-container {
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 90vw;
+  margin: 2%;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.card-header {
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-icon {
+  width: 4em;
+  height: 4em;
+  margin-right: 20px;
+}
+
+.card-info p {
+  font-size: 0.8rem;
+  color: #434b54;
+  margin-top: 5%;
+}
+
+.card-icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card-footer {
+  padding: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.categories-title {
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  box-shadow: 1px 2px 4px rgba(86, 86, 86, 0.468);
+  padding: 2%;
+}
+
+/* Add new category */
+
+.add-form {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.submit input {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  width: 50vw;
+  margin-top: 5%;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Payments */
+
+.payment-info p {
+  font-size: 1rem;
+  color: #434b54;
+  margin-top: 5%;
+}

@@ -1,0 +1,30 @@
+<nav class="login-header flex">
+  <%= link_to image_tag("https://i.postimg.cc/28jqpTJJ/pngaaa-com-4731717.png' border='0' alt='pngaaa-com-4731717"), root_path, class: 'back-arrow' %>
+  <h2>Register</h2>
+</nav>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder: "Full Name" %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"  %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password (6 character min.)"%>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Repeat Password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Next" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
