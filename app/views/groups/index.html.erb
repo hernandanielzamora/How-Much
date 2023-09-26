@@ -10,7 +10,7 @@
 </nav>
 
 
-<h2 class="categories-title">Total payments: $<%= total_sum = Payment.sum(:amount) %></h2>
+<h2 class="categories-title">Total payments: $<%= current_user.payments.sum(:amount) %></h2>
 
 <% if @groups.blank? %>
   <h2 class="no-title"> No categories yet </h2>
